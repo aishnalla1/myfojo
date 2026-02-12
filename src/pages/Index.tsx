@@ -7,6 +7,10 @@ import Trusted from "@/components/trusted";
 import Testominials from "@/components/testimonials";
 import Serviceslider from "@/components/serviceslider";
 import { Package, BarChart, TrendingUp } from "lucide-react";
+import StorySection from "@/components/storySection";
+
+
+
 import {
   ChevronLeft,
   ChevronRight,
@@ -31,62 +35,54 @@ type Feature = {
 const whymyfojo = [
 {
       id: 1,
-      icon: <Package className="w-12 h-12 text-green-600" />,
-      title: "Inventory Management",
+      icon: <Package className="w-12 h-12 text-red-600" />,
+      title: "Instant Digital Menu Creation and Sharing",
       description: (
         <>
-          Track stock in real-time with MyFojo’s inventory management system,{" "}
-          <span className="text-green-500 font-medium">preventing shortages</span>, 
-          reducing waste, and optimizing purchases.
+          Easily create and update a digital menu for your restaurant, 
+          and share it directly with customers via WhatsApp or QR code for direct ordering
         </>
       ),
     },
     {
       id: 2,
-      icon: <BarChart className="w-12 h-12 text-green-600" />,
-      title: "Business Analytics & Reports",
+      icon: <BarChart className="w-12 h-12 text-red-600" />,
+      title: "Direct WhatsApp Order Management",
       description: (
         <>
-          Use actionable insights from POS reports and data analytics to monitor
-          sales trends,{" "}
-          <span className="text-green-500 font-medium">improve profitability</span>, 
-          and drive growth.
+        	Receive orders instantly on WhatsApp with automated responses, allowing real-time order with customers to confirm, customize, and finalize orders
         </>
       ),
     },
     {
       id: 3,
-      icon: <TrendingUp className="w-12 h-12 text-green-600" />,
-      title: "Sales Growth",
+      icon: <TrendingUp className="w-12 h-12 text-red-600" />,
+      title: "Multiple Payment Options Integration",
       description: (
         <>
-          Boost your revenue with data-driven strategies and{" "}
-          <span className="text-green-500 font-medium">optimized performance</span>.
+        	Accept payments through over 20 methods, ensuring a convenient and secure transaction experience for every customer.
         </>
       ),
     },
     {
       id: 4,
-      icon: <Users className="w-12 h-12 text-green-600" />,
-      title: "Customer Engagement",
+      icon: <Users className="w-12 h-12 text-red-600" />,
+      title: "No Third-Party Commissions",
       description: (
         <>
-          Build loyal customers with{" "}
-          <span className="text-green-500 font-medium">personalized experiences</span> 
-          and promotions.
+        Eliminate high delivery platform fees-orders and payments come directly to you, maximising your profits and building direct customer relationships.
         </>
       ),
     },
     {
       id: 5,
-      icon: <BarChart className="w-12 h-12 text-green-600" />,
-      title: "Business Analytics & Reports",
+      icon: <BarChart className="w-12 h-12 text-red-600" />,
+      title: "Comprehensive Order Tracking and Reporting",
       description: (
         <>
-          Use actionable insights from POS reports and data analytics to monitor
-          sales trends,{" "}
-          <span className="text-green-500 font-medium">improve profitability</span>, 
-          and drive growth.
+         Access detailed reports on orders and earnings, track business growth, and manage customer engagement- all from your WhatsApp dashboard.
+
+
         </>
       ),
     },
@@ -99,27 +95,24 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <VideoHero
-        title="MyFojo"
-        subtitle="Complete Restaurant Solutions for the Modern World"
-      >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+     <VideoHero
+  title="MyFojo"
+  subtitle="Complete Restaurant Solutions for the Modern World"
+  imageSrc="/images/myfojo1bg.png"
+>
+  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link to="/contact">
             <Button size="lg" className="cta-button text-primary-foreground px-8 py-4 text-lg rounded-full">
               Book a Demo
             </Button>
           </Link>
           <Link to="/services/wa-delivery">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg rounded-full bg-transparent"
-            >
-              Explore Services
-            </Button>
+            
           </Link>
         </div>
       </VideoHero>
+
+        
 
       {/* Trusted Section */}
       <Trusted />
@@ -141,7 +134,7 @@ const Index = () => {
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
             Simplify your restaurant operations, reduce costs, and grow your 
-            business with our smart POS solutions. MyFojo empowers you with 
+            business with our smart WhatsApp Delivery solutions. MyFojo empowers you with 
             tools designed to make decision-making faster and more effective.
           </p>
         </div>
@@ -179,6 +172,8 @@ const Index = () => {
       `}</style>
     </div>
       </section>
+      <StorySection />
+
 
        {/* Testimonials */}
       <Testominials />

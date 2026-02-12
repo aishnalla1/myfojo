@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-16 bg-green-200 overflow-hidden">
+    <section className="relative py-16 bg-white-500 overflow-hidden">
       {/* Section Title */}
       <h2 className="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-12 font-[Lato]">
         What Our Clients Say
@@ -49,7 +49,7 @@ export default function Testimonials() {
           {testimonials.concat(testimonials).map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg min-w-[350px] max-w-[350px] flex-shrink-0 border border-green-300"
+              className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg min-w-[350px] max-w-[350px] flex-shrink-0 border border-red-300"
             >
               {/* Logo */}
               <div className="flex justify-center mb-4">
@@ -64,27 +64,27 @@ export default function Testimonials() {
 
               {/* Quote */}
               <div className="mb-6 relative">
-                <span className="text-green-400 text-4xl font-bold absolute -top-4 -left-2">
+                <span className="text-red-400 text-4xl font-bold absolute -top-4 -left-2">
                   "
                 </span>
                 <p className="text-gray-700 text-sm leading-relaxed pl-4 pr-2">
                   {testimonial.quote}
                 </p>
-                <span className="text-green-400 text-4xl font-bold absolute -bottom-6 right-2">
+                <span className="text-red-400 text-4xl font-bold absolute -bottom-6 right-2">
                   "
                 </span>
               </div>
 
               {/* Customer Info */}
               <div className="flex items-center gap-3 mt-4">
-                <div className="w-10 h-10 bg-green-400 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-red-400 rounded-full flex items-center justify-center">
                   <User className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">
                     {testimonial.name}
                   </h4>
-                  <p className="text-green-600 text-xs font-medium">
+                  <p className="text-red-600 text-xs font-medium">
                     {testimonial.location}
                   </p>
                 </div>

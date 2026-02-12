@@ -19,7 +19,10 @@ const LogoSlider: React.FC = () => {
     { name: 'momomagiccafe', image: '/images/momomagiccafe.jpg' },
     { name: 'noidawery', image: '/images/noidawery.jpg' },
     { name: 'nutkhut', image: '/images/nutkhut.jpg' },
-    { name: 'teamelements', image: '/images/teamelements.jpg' },
+    { name: 'trueelements', image: '/images/trueelements.jpg' },
+    {name:'HandiHighway', image:'/images/handihighway.jpg' },
+    {name:'knockit',image:'/images/knockit.jpg' },
+
   ];
 
   const doublelogos = [...logos, ...logos];

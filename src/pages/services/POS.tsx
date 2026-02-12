@@ -119,6 +119,29 @@ const POS = () => {
     { name: "Delivery Partners", icon: "🛵", description: "Integration with delivery services" },
     { name: "Loyalty Programs", icon: "🎁", description: "Built-in customer loyalty management" }
   ];
+    const features1 = [
+    {
+      title: "Quick Order Entry",
+      description:
+        "Accelerate service with fast and intuitive order entry for dine-in, takeaway, and delivery.",
+      image:
+        "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1600&auto=format&fit=crop",
+    },
+    {
+      title: "No Addition Fee for Extra Captains",
+      description:
+        "Streamline table assignments and manage multi-course meals with our unlimited free captains for a seamless dining experience.",
+      image:
+        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1600&auto=format&fit=crop",
+    },
+    {
+      title: "All App Integrations",
+      description:
+        "Accept online delivery on the fly with all delivery partners like MyFojo, Zomato and Swiggy on one powerful platform.",
+      image:
+        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=1600&auto=format&fit=crop",
+    },
+  ];
 
   return (
     <Layout>
@@ -284,62 +307,63 @@ const POS = () => {
         </div>
       </section>
 
-      {/* Support Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6 gradient-text">
-                24/7 Support & Training
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold mb-2">🎓 Complete Training</h3>
-                  <p className="text-muted-foreground">Comprehensive training for your staff on all POS features</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold mb-2">📞 24/7 Support</h3>
-                  <p className="text-muted-foreground">Round-the-clock technical support via phone, chat, and email</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold mb-2">🔧 Regular Updates</h3>
-                  <p className="text-muted-foreground">Automatic software updates with new features and security patches</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold mb-2">🛠️ Hardware Maintenance</h3>
-                  <p className="text-muted-foreground">Hardware replacement and maintenance included in all plans</p>
-                </div>
-              </div>
-            </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="service-card p-4 text-center">
-                <div className="text-3xl mb-2">⏰</div>
-                <h3 className="font-bold text-lg">24/7</h3>
-                <p className="text-muted-foreground text-sm">Support Available</p>
+          <section className="w-full py-24 bg-gradient-to-b from-white to-[#FFF4EC]">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Heading */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#E53935]">
+            Powerful POS for Modern Restaurants
+          </h2>
+          <p className="text-gray-600 mt-6 max-w-3xl mx-auto text-lg">
+            Run your restaurant operations with a robust POS system designed
+            for quick services — 3-step billing, full-service dining with
+            unlimited captains, and all app integrations in one place.
+          </p>
+        </div>
+
+        {/* Features */}
+        <div className="space-y-28">
+          {features1.map((feature, index) => (
+            <div
+              key={index}
+              className={`grid md:grid-cols-2 gap-12 items-center ${
+                index % 2 !== 0 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Image */}
+              <div className={`${index % 2 !== 0 ? "md:order-2" : ""}`}>
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="rounded-3xl shadow-2xl w-full object-cover h-[400px]"
+                />
               </div>
-              <div className="service-card p-4 text-center">
-                <div className="text-3xl mb-2">⚡</div>
-                <h3 className="font-bold text-lg">&lt;5min</h3>
-                <p className="text-muted-foreground text-sm">Response Time</p>
-              </div>
-              <div className="service-card p-4 text-center">
-                <div className="text-3xl mb-2">🎯</div>
-                <h3 className="font-bold text-lg">99.9%</h3>
-                <p className="text-muted-foreground text-sm">Uptime Guarantee</p>
-              </div>
-              <div className="service-card p-4 text-center">
-                <div className="text-3xl mb-2">📚</div>
-                <h3 className="font-bold text-lg">Free</h3>
-                <p className="text-muted-foreground text-sm">Training Included</p>
+
+              {/* Content */}
+              <div className={`${index % 2 !== 0 ? "md:order-1" : ""}`}>
+                <h3 className="text-3xl font-bold text-[#FF6A00] mb-6">
+                  {feature.title}
+                </h3>
+
+                <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                  {feature.description}
+                </p>
+
+                <div className="w-16 h-1 bg-[#E53935] rounded-full"></div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
+
+      </div>
+    </section>
+
+    
+               
+    
+   
 
       {/* CTA Section */}
 <section className="py-12 bg-gradient-hero text-white">
