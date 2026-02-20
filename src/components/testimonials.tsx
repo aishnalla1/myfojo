@@ -12,26 +12,58 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     quote:
-      "Shifting to Menew was one of my best decision. Billing and reports helped me in running restaurant so easily and now I can take better quick decisions.",
-    name: "Ritik Goel",
-    location: "Jammu",
-    logo: "/lovable-uploads/a25f4954-f5c2-44f5-be1d-6809b7126407.png",
+      " Since switching to MyFojo WhatsApp Ordering, my profit margins have improved instantly with 0% commission. I now manage all order updates in one WhatsApp chat and communicate directly with my customers. It’s simple, efficient, and completely under my control.",
+    name: "Sourabh",
+    location: "Nutkhut-Owner",
+    logo: "/images/nutkhut.jpg",
   },
   {
     id: 2,
     quote:
-      "Great support. Very satisfied with software and they keep adding new useful features which really helps me build strategies for increasing revenue.",
-    name: "Nikhil Verma",
-    location: "Ambala, Haryana",
-    logo: "/lovable-uploads/a25f4954-f5c2-44f5-be1d-6809b7126407.png",
+      " My customers are already on WhatsApp, and with MyFojo’s 98% open rate, my promotions actually convert into real orders. The menu showcase, direct conversations, and repeat business have helped my restaurant grow without paying high commissions to aggregators. Highly recommended!",
+    name: "Sujata nigam",
+    location: "Handi se-Owner",
+    logo: "/images/handise.jpg",
   },
   {
     id: 3,
     quote:
-      "My staff finds it user-friendly. Training new employees is easy now. Team is so reachable & responds quickly.",
-    name: "Mohammed Khalid",
-    location: "Hyderabad",
-    logo: "/lovable-uploads/a25f4954-f5c2-44f5-be1d-6809b7126407.png",
+      "MyFojo helped me cut down heavy aggregator commissions completely. With 0% commission and direct WhatsApp ordering, I now keep full profits and have better control over my customer relationships. It’s a smart and profitable solution.",
+    name: "Rajiv Singh",
+    location: "Noidawery-Manager",
+    logo: "/images/noidawery.jpg",
+  },
+  {
+    id: 4,
+    quote:
+      " The best part about MyFojo is that all order updates happen in one WhatsApp chat. From order received to delivery, everything is smooth and transparent. My repeat orders have increased because I can directly engage with customers. ",
+    name: "Naveen",
+    location: "Barrack62-Manager",
+    logo: "/images/barrack.jpg",
+  },
+  {
+    id: 5,
+    quote:
+      " Earlier, I had no access to my customer data. With MyFojo, I own my customer list and can run campaigns easily. The 98% open rate and instant menu showcase have boosted my sales without increasing menu prices. Highly satisfied! ",
+    name: "Sumit",
+    location: "Handi highway dining-Owner",
+    logo: "/images/handihighway.jpg",
+  },
+ {
+    id: 6,
+    quote:
+      " Switching to MyFojo completely changed how I handle online orders. I no longer depend on third-party apps or pay heavy commissions. With 0% commission and direct WhatsApp ordering, I keep 100% of my profits and build stronger relationships with my customers. The ordering process is seamless, and managing everything from one chat makes operations much easier.",
+    name: "Princes",
+    location: "Knockit- Owner",
+    logo: "/images/knockit.jpg",
+  },
+   {
+    id: 7,
+    quote:
+      " What I love most about MyFojo is the control it gives me. I can showcase my full menu instantly, send promotions directly to customers, and track orders in real time — all through WhatsApp. The 98% open rate means my messages actually get seen, and I’ve noticed a clear increase in repeat customers. It’s cost-effective, efficient, and perfect for growing restaurants.",
+    name: "Vipin",
+    location: "Unbound cafe- Manager",
+    logo: "/images/unboundcafe.jpg",
   },
 ];
 
