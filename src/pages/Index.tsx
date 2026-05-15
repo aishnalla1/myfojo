@@ -12,15 +12,7 @@ import StorySection from "@/components/storySection";
 
 
 import {
-  ChevronLeft,
-  ChevronRight,
-  Zap,
-  Shield,
   Users,
-  Smartphone,
-  Heart,
-  Star,
-  Trophy,
 } from "lucide-react";
 
 type Feature = {

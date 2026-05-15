@@ -10,18 +10,18 @@ const LogoSlider: React.FC = () => {
     { name: 'The Yellow Chili', image: '/images/theyellowchilli.jpg' },
     { name: 'AVS', image: '/images/avs.jpg' },
     { name: 'Barrack', image: '/images/barrack.jpg' },
-    { name: 'cafeunbound', image: '/images/cafeunbound.jpg' },
-    { name: 'gobblers', image: '/images/gobblers.jpg' },
     { name: 'handise', image: '/images/handise.jpg' },
     { name: 'kikkoman', image: '/images/kikkoman.jpg' },
     { name: 'knor', image: '/images/knor.jpg' },
     { name: 'missdoozy', image: '/images/missdoozi.jpg' },
-    { name: 'momomagiccafe', image: '/images/momomagiccafe.jpg' },
     { name: 'noidawery', image: '/images/noidawery.jpg' },
     { name: 'nutkhut', image: '/images/nutkhut.jpg' },
     { name: 'trueelements', image: '/images/trueelements.jpg' },
     {name:'HandiHighway', image:'/images/handihighway.jpg' },
-    {name:'knockit',image:'/images/knockit.jpg' },
+    {name:'Baap of Rulz',image:'/images/baapofrulz.jpg' },
+    {name:'Gopala',image:'/images/gopala.jpg' },
+    {name:'Mothi Mahal On Board ',image:'/images/mothimahalonboard.jpg' },
+    
 
   ];
 

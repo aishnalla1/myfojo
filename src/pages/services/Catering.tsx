@@ -159,11 +159,11 @@ const Catering = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6">The Restaurant</h2>
+              <h1 className="text-4xl font-bold mb-6">The Restaurant</h1>
+              <h3 className="text-2xl font-bold mb-6">Food is more than nourishment. It is a bridge between cultures, a language of togetherness. </h3>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
-                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of 
-                the Semantics, a large language ocean.
+                We invite you to embark on this culinary journey, celebrating the flavours, traditions, and heartfelt warmth of the Kashmiri Pandit community. 
+Each bite is not merely a taste of cuisine, but an immersion into a living legacy woven with love, tradition, and the artistry of culinary excellence.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <img src="/images/food3.jpeg" alt="Restaurant interior" className="rounded-lg shadow-lg" />

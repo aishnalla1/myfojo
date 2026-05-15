@@ -65,9 +65,9 @@ const WADelivery = () => {
   return (
     <Layout>
       <VideoHero
-        title="Direct from Supplier to You. No More Middlemen."
-        subtitle="Order fresh, local products directly from our trusted partners via WhatsApp."
-        videoSrc="/videos/wa_delivery.mp4"
+        title="Direct from restaurant to End Customer. No More Middlemen."
+        subtitle="Order fresh, products directly from our trusted partners via WhatsApp."
+        videoSrc="/videos/order_food.mp4"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link to="/contact">
@@ -326,13 +326,7 @@ const WADelivery = () => {
           </Button>
         </Link>
         <Link to="/contact" className="!mb-0">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg rounded-full bg-transparent"
-          >
-            Schedule Meeting
-          </Button>
+          
         </Link>
       </div>
     </div>

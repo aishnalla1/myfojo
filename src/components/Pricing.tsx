@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import Layout from "@/components/Layout";
-import VideoHero from "@/components/VideoHero";
+//import Layout from "@/components/Layout";
+//import VideoHero from "@/components/VideoHero";
 import { Check, X ,Plus} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import deliveryIntegrations from "/images/delivery-integrations.png";
@@ -29,7 +29,7 @@ const Pricing= () => {
     "Inventory Management",
     "Kitchen Display System",
     "24/7 Support",
-    "Menew Connect",
+    "MyFojo Connect",
     "Tally"
   ];
 const plans1 = [
@@ -61,7 +61,7 @@ const matrix: (boolean | "addon")[][] = [
   [false, "addon", "addon", "addon", "addon"], // Inventory
   [false, "addon", "addon", "addon", "addon"], // Kitchen Display
   [false, "addon", "addon", "addon", "addon"], // 24/7 Support
-  [false, "addon", "addon", "addon", "addon"], // Menew Connect
+  [false, "addon", "addon", "addon", "addon"], // MyFojo Connect
   [false, "addon", "addon", "addon", "addon"], // Tally
 ];
 const plans = [
@@ -111,7 +111,7 @@ const plans = [
     },
     {
       title: "Build your Own",
-      description: "Perfect for restaurants aiming to boost revenue and streamline operations with the complete Menew platform.",
+      description: "Perfect for restaurants aiming to boost revenue and streamline operations with the complete MyFojo platform.",
       price: "Custom",
       period: "Pricing",
       features: [
@@ -127,7 +127,7 @@ const plans = [
    const addOns = [
     {
       title: "Third-Party Delivery Integrations",
-      description: "Effortless delivery integration with Menew-partnering with Dunzo and more to serve your customers fresh, hot meals, every time",
+      description: "Effortless delivery integration with MyFojo-partnering with Dunzo and more to serve your customers fresh, hot meals, every time",
       image: deliveryIntegrations
     },
     {
@@ -141,8 +141,8 @@ const plans = [
       image: inventoryManagement
     },
     {
-      title: "Menew Connect",
-      description: "Simplify your restaurant's marketing and customer relations with Menew Connect where every order, payment, feedback and promotion is just a tap away",
+      title: "MyFojo Connect",
+      description: "Simplify your restaurant's marketing and customer relations with MyFojo Connect where every order, payment, feedback and promotion is just a tap away",
       image: deliveryIntegrations
     },
     {
@@ -160,11 +160,7 @@ const plans = [
       description: "Round-the-clock assistance and choose your channel of communication i.e., through in-app, WhatsApp, call, or email",
       image: inventoryManagement
     },
-    {
-      title: "SMS Package",
-      description: "Skip the paper by sending bills directly to your customer's phone with a single SMS",
-      image: deliveryIntegrations
-    },
+    
     {
       title: "Customer Promotions",
       description: "Your Restaurant, Your Rules-Customize discounts and promotions for unbeatable customer engagement",
@@ -178,20 +174,9 @@ const plans = [
    ];
 
   return (
-    <Layout>
-      <VideoHero
-        title="Flexible POS Software Price Options to Match Your Goals"
-        subtitle="Choose the perfect plan for your restaurant's needs"
-      >
-        <Link to="/contact">
-          <Button size="lg" className="cta-button text-primary-foreground px-8 py-4 text-lg rounded-full">
-            Get Custom Quote
-          </Button>
-        </Link>
-      </VideoHero>
-
+    <>
       {/* Main Pricing Section */}
-        <section className="py-16">
+      <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-foreground mb-4">
           Subscription Based Pricing
@@ -405,7 +390,7 @@ const plans = [
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

@@ -1,379 +1,229 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Phone, MessageCircle } from 'lucide-react';
+import { Card } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Leaf, Drumstick, Truck, Flame, Award } from "lucide-react";
 
 const MenuSection = () => {
-  const [openDialog, setOpenDialog] = useState<string | null>(null);
+  const [openMenu, setOpenMenu] = useState<"veg" | "nonveg" | null>(null);
 
-  const menuCategories = {
-    veg: {
-      title: "Veg Menu",
-      categories: [
-        {
-          name: "TRADITIONAL MENU",
-          color: "bg-gray-700",
-          items: [
-            "Bobbattu | Ravva Kesari | Payasam",
-            "Plain Rice",
-            "Pulihora / Pudina Rice", 
-            "Dall",
-            "Veg Curry",
-            "Samabar",
-            "Curd",
-            "Pickle",
-            "Mouth Freshner"
-          ]
-        },
-        {
-          name: "Basic Menu",
-          color: "bg-orange-600",
-          items: [
-            "Veg Snack",
-            "Veg Biryani",
-            "Common Masala",
-            "Plain Rice",
-            "Dall",
-            "Samabar",
-            "Veg Fry",
-            "Curd",
-            "Raitha"
-          ]
-        },
-        {
-          name: "STANDARD MENU",
-          color: "bg-orange-700",
-          items: [
-            "Sweet",
-            "Roti",
-            "Special Masala",
-            "Veg Biryani",
-            "Common Masala",
-            "Plain Rice",
-            "Dall",
-            "Samabar",
-            "Veg Fry"
-          ]
-        },
-        {
-          name: "SILVER MENU {Min 100PAX}",
-          color: "bg-orange-600",
-          items: [
-            "Welcome Drink",
-            "Sweet 2 {One spl One Common}",
-            "Veg Snack {Common}",
-            "Veg Snack Special",
-            "Roti | Poori | Pulka"
-          ]
-        },
-        {
-          name: "Gold MENU {Min 300PAX}",
-          color: "bg-orange-700",
-          items: [
-            "Welcome Drink",
-            "Sweet 2 {One spl One Common}",
-            "Desserts {2 Types}",
-            "Veg Snack {Common}",
-            "Starters {2 Types}"
-          ]
-        }
-      ]
-    },
-    nonveg: {
-      title: "Non-Veg Menu",
-      categories: [
-        {
-          name: "TRADITIONAL MENU",
-          color: "bg-gray-700",
-          items: [
-            "Chicken Biryani",
-            "Mutton Curry",
-            "Fish Fry",
-            "Plain Rice",
-            "Dall",
-            "Chicken Masala",
-            "Egg Curry",
-            "Pickle",
-            "Mouth Freshner"
-          ]
-        },
-        {
-          name: "Basic Menu",
-          color: "bg-orange-600",
-          items: [
-            "Chicken Snack",
-            "Chicken Biryani",
-            "Mutton Masala",
-            "Plain Rice",
-            "Dall",
-            "Fish Curry",
-            "Egg Fry",
-            "Curd",
-            "Raitha"
-          ]
-        },
-        {
-          name: "STANDARD MENU",
-          color: "bg-orange-700",
-          items: [
-            "Sweet",
-            "Roti",
-            "Chicken Special",
-            "Mutton Biryani",
-            "Fish Masala",
-            "Plain Rice",
-            "Dall",
-            "Chicken Fry"
-          ]
-        },
-        {
-          name: "SILVER MENU {Min 100PAX}",
-          color: "bg-orange-600",
-          items: [
-            "Welcome Drink",
-            "Chicken Starter",
-            "Mutton Special",
-            "Fish Fry Special",
-            "Biriyani Special"
-          ]
-        },
-        {
-          name: "Gold MENU {Min 300PAX}",
-          color: "bg-orange-700",
-          items: [
-            "Welcome Drink",
-            "Chicken Starters {2 Types}",
-            "Mutton Special",
-            "Fish Delicacy",
-            "Premium Biryani"
-          ]
-        }
-      ]
-    },
-    breakfast: {
-      title: "Breakfast Menu",
-      categories: [
-        {
-          name: "TRADITIONAL MENU",
-          color: "bg-gray-700",
-          items: [
-            "Idli Sambar",
-            "Dosa with Chutney",
-            "Upma",
-            "Vada",
-            "Filter Coffee",
-            "Coconut Chutney",
-            "Tomato Chutney",
-            "Pickle"
-          ]
-        },
-        {
-          name: "Basic Menu",
-          color: "bg-orange-600",
-          items: [
-            "Poha",
-            "Paratha",
-            "Tea/Coffee",
-            "Bread Butter",
-            "Jam",
-            "Fruits",
-            "Juice",
-            "Cereals"
-          ]
-        },
-        {
-          name: "STANDARD MENU",
-          color: "bg-orange-700",
-          items: [
-            "Continental Breakfast",
-            "South Indian Special",
-            "North Indian Special",
-            "Fresh Fruits",
-            "Juices",
-            "Coffee/Tea",
-            "Toast",
-            "Omelette"
-          ]
-        },
-        {
-          name: "SILVER MENU {Min 100PAX}",
-          color: "bg-orange-600",
-          items: [
-            "Welcome Drink",
-            "Breakfast Buffet",
-            "Live Counter",
-            "Fresh Juices",
-            "Premium Coffee"
-          ]
-        },
-        {
-          name: "Gold MENU {Min 300PAX}",
-          color: "bg-orange-700",
-          items: [
-            "Welcome Drink",
-            "Premium Breakfast Buffet",
-            "Live Cooking Stations",
-            "Fresh Juice Bar",
-            "Exotic Fruits"
-          ]
-        }
-      ]
-    }
+  // SHORT PREVIEW MENU (CARD)
+  const vegPreview = [
+    { name: "Yakhni", price: "₹800 / kg" },
+    { name: "Dum Aloo", price: "₹800 / kg" },
+    { name: "Paneer Lababdar", price: "₹900 / kg" },
+    { name: "Kadhai Paneer", price: "₹900 / kg" },
+    { name: "Dal Makhani", price: "₹800 / kg" },
+    { name: "Kashmiri Rajma", price: "₹900 / kg" },
+  ];
+
+  const nonVegPreview = [
+    { name: "Mutton Rogan Josh", price: "₹1800 / kg" },
+    { name: "Mutton Yakhni", price: "₹1800 / kg" },
+    { name: "Chicken Rogan Josh", price: "₹1200 / kg" },
+    { name: "Chicken Biryani", price: "₹1200 / kg" },
+    { name: "Goshtaba", price: "₹2400 / kg" },
+    { name: "Plain Gaad (Fish)", price: "₹1600 / kg" },
+  ];
+
+  // FULL MENU (FROM YOUR PDF)
+  const fullMenu = {
+    veg: [
+      "Yakhni - ₹800/kg",
+      "Ayel Yakhni - ₹800/kg",
+      "Nadur Yakhni - ₹800/kg",
+      "Mushroom Yakhni - ₹1800/kg",
+      "Nadru Rista - ₹2400/kg",
+      "Khatte Nadru - ₹800/kg",
+      "Palak Nadru - ₹800/kg",
+      "Nadur Haak - ₹800/kg",
+      "Dum Maunja - ₹800/kg",
+      "Dum Aloo - ₹800/kg",
+      "Methi Mutter - ₹900/kg",
+      "Red Gobhi - ₹800/kg",
+      "Aloo Mutter - ₹800/kg",
+      "Red Paneer - ₹900/kg",
+      "Paneer Keliya - ₹900/kg",
+      "Kadhai Paneer - ₹900/kg",
+      "Paneer Lababdar - ₹900/kg",
+      "Shahi Paneer - ₹900/kg",
+      "Paneer Yakhni - ₹900/kg",
+      "Tamatar Wangun - ₹800/kg",
+      "Chok Wangun - ₹800/kg",
+      "Dal Makhani - ₹800/kg",
+      "Dal Tadka - ₹800/kg",
+      "Moong Dal - ₹800/kg",
+      "Kashmiri Rajma - ₹900/kg",
+    ],
+    nonveg: [
+      "Mutton Rogan Josh - ₹1800/kg",
+      "Mutton Yakhni - ₹1800/kg",
+      "Mutton Keema - ₹1800/kg",
+      "Mutton Keliya - ₹1800/kg",
+      "Kabargah - ₹1800/kg",
+      "Goshtaba - ₹2400/kg",
+      "Rista - ₹2400/kg",
+      "Mutton Kebab - ₹1800/kg",
+      "Meat Pulao - ₹1800/kg",
+      "Chicken Yakhni - ₹1200/kg",
+      "Chicken Rogan Josh - ₹1200/kg",
+      "Chicken Keliya - ₹1200/kg",
+      "Butter Chicken - ₹1200/kg",
+      "Chicken Rara - ₹1200/kg",
+      "Chicken Tikka - ₹1200/kg",
+      "Chicken Kebab - ₹1200/kg",
+      "Chilli Chicken - ₹1200/kg",
+      "Chicken Biryani - ₹1200/kg",
+      "Egg Curry - ₹1200",
+      "Kadam & Gaad - ₹1400/kg",
+      "Mooji & Gaad - ₹1400/kg",
+      "Nadru & Gaad - ₹1400/kg",
+      "Plain Gaad - ₹1600/kg",
+    ],
   };
 
+  const renderPreview = (items: any[], color: string) => (
+    <ul className="space-y-2 mt-4 text-sm">
+      {items.map((item, i) => (
+        <li key={i} className="flex justify-between">
+          <span className="flex gap-2">
+            <span className={color}>✔</span> {item.name}
+          </span>
+          <span className="font-semibold">{item.price}</span>
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
-    <section id="menu" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-[#f8f5f2]">
+      <div className="max-w-7xl mx-auto px-4">
+
+        {/* HEADER */}
+        <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="gradient-text">Our Menu Categories</span>
-            </h2>
-          <p className="text-gray-600">Choose from our variety of menu options</p>
+          <h2 className="text-6xl font-bold mb-4">
+            <span className="gradient-text">Kashmiri Menu</span>
+          </h2>
+          <p className="text-3xl text-gray-600 mt-2">
+            Flavors of Kashmir, Crafted with Tradition
+          </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Veg Menu Card */}
-          <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="bg-orange-600 text-white text-center py-4">
-              <h3 className="text-xl font-bold">Veg Menu</h3>
+        </div>
+
+        {/* CARDS */}
+        <div className="grid md:grid-cols-2 gap-10">
+
+          {/* VEG */}
+          <Card className="overflow-hidden rounded-2xl shadow-lg">
+<img
+  src="/images/vegmenu.jpeg"
+  alt="Veg Menu"
+  className="w-full h-49 object-cover rounded-t-2xl"
+/>         <div className="p-6 text-center">
+              <div className="flex justify-center mb-2">
+                <div className="bg-green-600 text-white p-3 rounded-full">
+                  <Leaf />
+                </div>
+              </div>
+
+              <h3 className="text-2xl font-bold text-green-700">VEG MENU</h3>
+
+              {renderPreview(vegPreview, "text-green-600")}
+
+              <Button
+                className="mt-6 bg-green-700 w-full"
+                onClick={() => setOpenMenu("veg")}
+              >
+                VIEW FULL MENU
+              </Button>
             </div>
-            <div className="h-48 bg-cover bg-center" style={{backgroundImage: `url('/images/vegmenu.jpeg')`}}></div>
-            <CardContent className="p-6 text-center">
-              <Dialog open={openDialog === 'veg'} onOpenChange={(open) => setOpenDialog(open ? 'veg' : null)}>
-                <DialogTrigger asChild>
-                  <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full">
-                    View Menu
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[80vh]">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold text-center">Veg Menu Options</DialogTitle>
-                  </DialogHeader>
-                  <ScrollArea className="h-[60vh] pr-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {menuCategories.veg.categories.map((category, index) => (
-                        <div key={index} className="mb-6">
-                          <div className={`text-white text-center py-3 px-4 rounded-t-lg ${category.color}`}>
-                            <h4 className="font-bold text-sm">{category.name}</h4>
-                          </div>
-                          <div className="bg-gray-50 p-4 rounded-b-lg border">
-                            <ul className="space-y-2">
-                              {category.items.map((item, itemIndex) => (
-                                <li key={itemIndex} className="text-gray-700 text-sm">• {item}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex justify-center gap-4 mt-6 pt-4 border-t">
-                      <Button variant="outline" className="flex items-center gap-2">
-                        <Phone className="w-4 h-4" />
-                        Contact Us
-                      </Button>
-                      
-                    </div>
-                  </ScrollArea>
-                </DialogContent>
-              </Dialog>
-            </CardContent>
           </Card>
 
-          {/* Non-Veg Menu Card */}
-          <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="bg-gray-800 text-white text-center py-4">
-              <h3 className="text-xl font-bold">Non-Veg Menu</h3>
-            </div>
-            <div className="h-48 bg-cover bg-center" style={{backgroundImage: `url('/images/nonvegmenu.jpeg')`}}></div>
-            <CardContent className="p-6 text-center">
-              <Dialog open={openDialog === 'nonveg'} onOpenChange={(open) => setOpenDialog(open ? 'nonveg' : null)}>
-                <DialogTrigger asChild>
-                  <Button className="bg-gray-800 hover:bg-gray-900 text-white w-full">
-                    View Menu
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[80vh]">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold text-center">Non-Veg Menu Options</DialogTitle>
-                  </DialogHeader>
-                  <ScrollArea className="h-[60vh] pr-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {menuCategories.nonveg.categories.map((category, index) => (
-                        <div key={index} className="mb-6">
-                          <div className={`text-white text-center py-3 px-4 rounded-t-lg ${category.color}`}>
-                            <h4 className="font-bold text-sm">{category.name}</h4>
-                          </div>
-                          <div className="bg-gray-50 p-4 rounded-b-lg border">
-                            <ul className="space-y-2">
-                              {category.items.map((item, itemIndex) => (
-                                <li key={itemIndex} className="text-gray-700 text-sm">• {item}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex justify-center gap-4 mt-6 pt-4 border-t">
-                      <Button variant="outline" className="flex items-center gap-2">
-                        <Phone className="w-4 h-4" />
-                        Contact Us
-                      </Button>
-                    </div>
-                  </ScrollArea>
-                </DialogContent>
-              </Dialog>
-            </CardContent>
-          </Card>
+          {/* NON VEG */}
+          <Card className="overflow-hidden rounded-2xl shadow-lg">
+            <img
+  src="/images/nonvegmenu.jpeg"
+  alt="Non-Veg Menu"
+  className="w-full h-49 object-cover rounded-t-2xl"
+/>  
+            <div className="p-6 text-center">
+              <div className="flex justify-center mb-2">
+                <div className="bg-red-600 text-white p-3 rounded-full">
+                  <Drumstick />
+                </div>
+              </div>
 
-          {/* Breakfast Menu Card */}
-          <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="bg-orange-700 text-white text-center py-4">
-              <h3 className="text-xl font-bold">Breakfast Menu</h3>
+              <h3 className="text-2xl font-bold text-red-700">
+                NON-VEG MENU
+              </h3>
+
+              {renderPreview(nonVegPreview, "text-red-600")}
+
+              <Button
+                className="mt-6 bg-red-700 w-full"
+                onClick={() => setOpenMenu("nonveg")}
+              >
+                VIEW FULL MENU
+              </Button>
             </div>
-            <div className="h-48 bg-cover bg-center" style={{backgroundImage: `url('/images/breakfastmenu.jpeg')`}}></div>
-            <CardContent className="p-6 text-center">
-              <Dialog open={openDialog === 'breakfast'} onOpenChange={(open) => setOpenDialog(open ? 'breakfast' : null)}>
-                <DialogTrigger asChild>
-                  <Button className="bg-orange-700 hover:bg-orange-800 text-white w-full">
-                    View Menu
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[80vh]">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold text-center">Breakfast Menu Options</DialogTitle>
-                  </DialogHeader>
-                  <ScrollArea className="h-[60vh] pr-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {menuCategories.breakfast.categories.map((category, index) => (
-                        <div key={index} className="mb-6">
-                          <div className={`text-white text-center py-3 px-4 rounded-t-lg ${category.color}`}>
-                            <h4 className="font-bold text-sm">{category.name}</h4>
-                          </div>
-                          <div className="bg-gray-50 p-4 rounded-b-lg border">
-                            <ul className="space-y-2">
-                              {category.items.map((item, itemIndex) => (
-                                <li key={itemIndex} className="text-gray-700 text-sm">• {item}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex justify-center gap-4 mt-6 pt-4 border-t">
-                      <Button variant="outline" className="flex items-center gap-2">
-                        <Phone className="w-4 h-4" />
-                        Contact Us
-                      </Button>                     
-                    </div>
-                  </ScrollArea>
-                </DialogContent>
-              </Dialog>
-            </CardContent>
           </Card>
+        </div>
+
+        {/* FEATURES */}
+        <div className="grid md:grid-cols-4 gap-6 mt-16 text-center">
+          <div>
+            <Leaf className="mx-auto text-green-600 mb-2" />
+            <h4 className="font-semibold">Authentic Recipe</h4>
+          </div>
+          <div>
+            <Award className="mx-auto text-yellow-600 mb-2" />
+            <h4 className="font-semibold">Premium Ingredients</h4>
+          </div>
+          <div>
+            <Flame className="mx-auto text-orange-600 mb-2" />
+            <h4 className="font-semibold">Hygienic Preparation</h4>
+          </div>
+          <div>
+            <Truck className="mx-auto text-red-600 mb-2" />
+            <h4 className="font-semibold">Timely Delivery</h4>
+          </div>
+        </div>
+
+        {/* FOOTER */}
+        <div className="text-center text-sm text-gray-500 mt-10">
+          All prices are in INR. GST extra @5%.
         </div>
       </div>
+
+      {/* FULL MENU POPUP */}
+      <Dialog open={openMenu !== null} onOpenChange={() => setOpenMenu(null)}>
+        <DialogContent className="max-w-4xl">
+          <DialogHeader>
+            <DialogTitle className="text-center text-2xl">
+              {openMenu === "veg" ? "Veg Full Menu" : "Non-Veg Full Menu"}
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className="h-[60vh] overflow-y-auto pr-4">
+            <ul className="space-y-3 text-sm">
+              {(openMenu === "veg"
+                ? fullMenu.veg
+                : fullMenu.nonveg
+              ).map((item, i) => (
+                <li key={i} className="border-b pb-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

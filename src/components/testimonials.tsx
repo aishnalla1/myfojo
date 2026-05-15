@@ -49,22 +49,8 @@ const testimonials: Testimonial[] = [
     location: "Handi highway dining-Owner",
     logo: "/images/handihighway.jpg",
   },
- {
-    id: 6,
-    quote:
-      " Switching to MyFojo completely changed how I handle online orders. I no longer depend on third-party apps or pay heavy commissions. With 0% commission and direct WhatsApp ordering, I keep 100% of my profits and build stronger relationships with my customers. The ordering process is seamless, and managing everything from one chat makes operations much easier.",
-    name: "Princes",
-    location: "Knockit- Owner",
-    logo: "/images/knockit.jpg",
-  },
-   {
-    id: 7,
-    quote:
-      " What I love most about MyFojo is the control it gives me. I can showcase my full menu instantly, send promotions directly to customers, and track orders in real time — all through WhatsApp. The 98% open rate means my messages actually get seen, and I’ve noticed a clear increase in repeat customers. It’s cost-effective, efficient, and perfect for growing restaurants.",
-    name: "Vipin",
-    location: "Unbound cafe- Manager",
-    logo: "/images/unboundcafe.jpg",
-  },
+
+   
 ];
 
 export default function Testimonials() {

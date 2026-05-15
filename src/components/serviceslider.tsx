@@ -17,37 +17,37 @@ import "swiper/css/effect-fade";
 const services = [
   {
     title: "Whatsapp Services",
-    image: "/images/whatsappService.jpg",
+    image: "/images/whatsappService.jpeg",
     link: "/services/wa-delivery",
   },
   {
     title: "Food Studio",
-    image: "/images/foodStudioService.jpg",
+    image: "/images/foodStudioService.jpeg",
     link: "/services/food-studio",
   },
   {
     title: "Order Food",
-    image: "/images/orderFoodService.jpg",
+    image: "/images/orderFoodService.jpeg",
     link: "/services/order-food",
   },
   {
     title: "POS",
-    image: "/images/posService.jpg",
+    image: "/images/posService.jpeg",
     link: "/services/pos",
   },
   {
     title: "Catering",
-    image: "/images/cateringService.jpg",
+    image: "/images/cateringService.jpeg",
     link: "/services/catering",
   },
   {
     title: "Packaging",
-    image: "/images/packagingService.jpg",
+    image: "/images/packagingService.jpeg",
     link: "/services/packaging",
   },
   {
     title: "People Management",
-    image: "/images/pmService.jpg",
+    image: "/images/pmService.jpeg",
     link: "/services/people-management",
   },
 ];

@@ -52,12 +52,7 @@ const FoodStudio = () => {
     icon: "✍️",
     description: "High-quality content to attract and retain customers.",
   },
-  {
-    title: "Email Marketing",
-    image: "/images/email.png",
-    icon: "📧",
-    description: "Effective email campaigns to drive customer loyalty.",
-  },
+
 ];
 
   return (
@@ -308,12 +303,12 @@ cultivate success for your journey ahead.
               Get a free marketing audit and see how we can help your restaurant grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
+              <Link to="/https://www.canva.com/design/DAGmvvxqS0g/USd_tQ_A9i8u92Ol04RxqQ/view?utm_content=DAGmvvxqS0g&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4ae8c97436#23">
                 <Button 
                   size="lg" 
                   className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg rounded-full"
                 >
-                  Get Free Audit
+                  View Full Portfolio
                 </Button>
               </Link>
               <Link to="/contact">
