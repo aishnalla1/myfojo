@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import VideoHero from "@/components/VideoHero";
@@ -75,7 +74,6 @@ const OrderFood = () => {
             {item.name}
           </p>
         </div>
-
       ))}
     </div>
   </div>
