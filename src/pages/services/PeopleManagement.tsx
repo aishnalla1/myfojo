@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import VideoHero from "@/components/VideoHero";
-import { ArrowRight, Users, Clock, DollarSign, TrendingUp, CheckCircle, UserCheck } from 'lucide-react';
+import { CheckCircle, UserCheck } from 'lucide-react';
 
 const PeopleManagement = () => {
   const services = [

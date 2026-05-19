@@ -12,13 +12,14 @@ const OrderFood = () => {
         videoSrc="/videos/order_food.mp4"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link to="/contact">
+          <a href="#cta-section">
             <Button size="lg" className="cta-button text-primary-foreground px-8 py-4 text-lg rounded-full">
               Download App
             </Button>
-            {/* Explore More Button */}
+          </a>
+          {/* Explore More Button */}
 <div className="flex justify-center mt-12">
-  <button
+ {/* <button
     onClick={() => {
       document
         .getElementById("cta-section")
@@ -27,9 +28,9 @@ const OrderFood = () => {
     className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:scale-105 transition duration-300 shadow-md"
   >
     Explore More
-  </button>
+  </button>*/}
 </div>
-          </Link>
+          
         </div>
       </VideoHero>
 
@@ -83,46 +84,46 @@ const OrderFood = () => {
       <section className="w-full py-16 px-6 md:px-12 bg-gradient-to-b from-orange-50 to-red-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-red-600 mb-10">
-            Popular Dishes Near You 🍽️
+            Popular Restarunts 🍽️
           </h2>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
               {
-                name: "Pizza",
-                img: "https://source.unsplash.com/400x300/?pizza",
-                rating: "4.5",
-                price: "₹299",
-              },
-              {
-                name: "Burger",
-                img: "https://source.unsplash.com/400x300/?burger",
-                rating: "4.3",
-                price: "₹149",
-              },
-              {
-                name: "Biryani",
-                img: "https://source.unsplash.com/400x300/?biryani",
-                rating: "4.7",
-                price: "₹249",
-              },
-              {
-                name: "Pasta",
-                img: "https://source.unsplash.com/400x300/?pasta",
-                rating: "4.2",
-                price: "₹199",
-              },
-              {
-                name: "Fried Chicken",
-                img: "https://source.unsplash.com/400x300/?fried-chicken",
-                rating: "4.6",
-                price: "₹279",
-              },
-              {
-                name: "Ice Cream",
-                img: "https://source.unsplash.com/400x300/?icecream",
+                name: "Bean House",
+                img: "/images/stage.jpeg",
                 rating: "4.8",
-                price: "₹99",
+                
+              },
+              {
+                name: "Culinaire FBD",
+                img: "/images/stage.jpeg",
+                rating: "4.8",
+                
+              },
+              {
+                name: "La Pino'z Pizza",
+                img: "/images/stage.jpeg",
+                rating: "4.8",
+                
+              },
+              {
+                name: "Chaudhary's",
+                img: "/images/stage.jpeg",
+                rating: "4.8",
+                
+              },
+              {
+                name: "Mittal Bhojnalay",
+                img: "/images/stage.jpeg",
+                rating: "4.8",
+                
+              },
+              {
+                name: "Standard Amritsari Vaishno Dhaba",
+                img: "/images/stage.jpeg",
+                rating: "4.8",
+                
               },
             ].map((item, index) => (
               <div
@@ -143,9 +144,6 @@ const OrderFood = () => {
                   <div className="flex justify-between items-center text-sm">
                     <span className="bg-green-500 text-white px-2 py-1 rounded">
                       ⭐ {item.rating}
-                    </span>
-                    <span className="text-red-600 font-bold">
-                      {item.price}
                     </span>
                   </div>
 

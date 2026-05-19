@@ -31,8 +31,7 @@ const whymyfojo = [
       title: "Instant Digital Menu Creation and Sharing",
       description: (
         <>
-          Easily create and update a digital menu for your restaurant, 
-          and share it directly with customers via WhatsApp or QR code for direct ordering
+          Create & share menus via WhatsApp or QR.
         </>
       ),
     },
@@ -42,39 +41,28 @@ const whymyfojo = [
       title: "Direct WhatsApp Order Management",
       description: (
         <>
-        	Receive orders instantly on WhatsApp with automated responses, allowing real-time order with customers to confirm, customize, and finalize orders
+        	Receive, confirm & manage orders instantly.
         </>
       ),
     },
+    
     {
       id: 3,
-      icon: <TrendingUp className="w-12 h-12 text-red-600" />,
-      title: "Multiple Payment Options Integration",
+      icon: <Users className="w-12 h-12 text-red-600" />,
+      title: "No Third-Party Commissions",
       description: (
         <>
-        	Accept payments through over 20 methods, ensuring a convenient and secure transaction experience for every customer.
+       No platform fees. Keep full profits.
         </>
       ),
     },
     {
       id: 4,
-      icon: <Users className="w-12 h-12 text-red-600" />,
-      title: "No Third-Party Commissions",
-      description: (
-        <>
-        Eliminate high delivery platform fees-orders and payments come directly to you, maximising your profits and building direct customer relationships.
-        </>
-      ),
-    },
-    {
-      id: 5,
       icon: <BarChart className="w-12 h-12 text-red-600" />,
       title: "Comprehensive Order Tracking and Reporting",
       description: (
         <>
-         Access detailed reports on orders and earnings, track business growth, and manage customer engagement- all from your WhatsApp dashboard.
-
-
+          	Track sales, growth & customer insights.
         </>
       ),
     },
@@ -114,56 +102,66 @@ const Index = () => {
      
 
       {/* POS Belt Section */}
-      <section className="flex h-screen">
-        {/* Left: Fixed Text */}
-<div className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-        
-        {/* Left Side */}
-        <div className="flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Why Choose MyFojo?
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Simplify your restaurant operations, reduce costs, and grow your 
-            business with our smart WhatsApp Delivery solutions. MyFojo empowers you with 
-            tools designed to make decision-making faster and more effective.
-          </p>
-        </div>
-
-        {/* Right Side Scrollable (Vertical) */}
-        <div className="max-h-[550px] overflow-y-auto scrollbar-hide pr-2">
-          <div className="grid grid-cols-2 gap-6">
-            {whymyfojo.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white shadow-md rounded-2xl p-8 text-center w-[320px] h-[250px] flex flex-col justify-between"
-              >
-                <div className="flex justify-center mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-orange-500 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section className="flex">
+  <div className="bg-white py-16 w-full">
+    <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+      
+      {/* Left Side */}
+      <div className="flex flex-col justify-center">
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Why Choose MyFojo?
+        </h2>
+        <p className="text-gray-600 text-lg leading-relaxed">
+          Simplify your restaurant operations, reduce costs, and grow your 
+          business with our smart WhatsApp Delivery solutions. MyFojo empowers you with 
+          tools designed to make decision-making faster and more effective.
+        </p>
       </div>
 
-      {/* Hide Scrollbar Utility */}
-      <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
+      {/* Right Side */}
+      <div className="max-h-[550px] overflow-y-auto pr-2 scrollbar-hide">
+        
+        {/* FIXED GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          
+          {whymyfojo.map((item) => (
+            <div
+              key={item.id}
+              className="bg-white shadow-md rounded-2xl p-6 flex flex-col justify-between text-center"
+            >
+              {/* ICON */}
+              <div className="flex justify-center mb-4">
+                {item.icon}
+              </div>
+
+              {/* TITLE */}
+              <h3 className="text-xl font-bold text-orange-500 mb-2">
+                {item.title}
+              </h3>
+
+              {/* DESCRIPTION */}
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+
+        </div>
+      </div>
     </div>
-      </section>
+
+    {/* Hide Scrollbar */}
+    <style>{`
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    `}</style>
+  </div>
+</section>
       <StorySection />
 
 

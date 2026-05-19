@@ -1,137 +1,207 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
-import VideoHero from "@/components/VideoHero";
+import VideoHero from "@/components/VideoHero";import { useState } from "react";
 
-const Packaging = () => {
-  const products = [
-    {
-      category: "Food Containers",
-      emoji: "📦",
-      items: [
-        { name: "Biodegradable Containers", price: "₹8-15/piece", description: "Eco-friendly food containers in various sizes" },
-        { name: "Plastic Containers", price: "₹5-12/piece", description: "Durable plastic containers with secure lids" },
-        { name: "Paper Boxes", price: "₹6-18/piece", description: "Grease-resistant paper boxes for takeaway" },
-        { name: "Aluminum Containers", price: "₹10-20/piece", description: "Heat-resistant aluminum containers" }
-      ]
-    },
-    {
-      category: "Cups & Glasses",
-      emoji: "🥤",
-      items: [
-        { name: "Paper Cups", price: "₹2-5/piece", description: "Hot and cold beverage cups with lids" },
-        { name: "Plastic Cups", price: "₹3-8/piece", description: "Clear plastic cups for cold beverages" },
-        { name: "Coffee Cups", price: "₹4-10/piece", description: "Insulated coffee cups with sleeves" },
-        { name: "Smoothie Cups", price: "₹5-12/piece", description: "Large cups perfect for smoothies and shakes" }
-      ]
-    },
-    {
-      category: "Plates & Bowls",
-      emoji: "🍽️",
-      items: [
-        { name: "Paper Plates", price: "₹3-8/piece", description: "Disposable plates in various sizes" },
-        { name: "Foam Plates", price: "₹2-6/piece", description: "Lightweight foam plates for events" },
-        { name: "Biodegradable Bowls", price: "₹5-12/piece", description: "Eco-friendly bowls for soups and curries" },
-        { name: "Plastic Bowls", price: "₹4-10/piece", description: "Reusable plastic bowls" }
-      ]
-    },
-    {
-      category: "Tissues & Napkins",
-      emoji: "🧻",
-      items: [
-        { name: "Table Napkins", price: "₹150-300/pack", description: "Soft table napkins in bulk packs" },
-        { name: "Kitchen Tissues", price: "₹80-150/roll", description: "Absorbent kitchen tissue rolls" },
-        { name: "Wet Wipes", price: "₹25-50/pack", description: "Sanitizing wet wipes for customers" },
-        { name: "Dispenser Napkins", price: "₹200-400/pack", description: "Napkins designed for dispensers" }
-      ]
-    },
-    {
-      category: "Wrapping Materials",
-      emoji: "📄",
-      items: [
-        { name: "Food Wrap Film", price: "₹120-250/roll", description: "Cling film for food wrapping" },
-        { name: "Aluminum Foil", price: "₹100-200/roll", description: "Heavy-duty aluminum foil" },
-        { name: "Parchment Paper", price: "₹80-160/roll", description: "Non-stick parchment paper" },
-        { name: "Butter Paper", price: "₹60-120/pack", description: "Grease-proof butter paper sheets" }
-      ]
-    },
-    {
-      category: "Cutlery",
-      emoji: "🍴",
-      items: [
-        { name: "Plastic Cutlery Set", price: "₹2-5/set", description: "Fork, knife, and spoon sets" },
-        { name: "Wooden Cutlery", price: "₹3-8/set", description: "Eco-friendly wooden cutlery" },
-        { name: "Disposable Spoons", price: "₹1-3/piece", description: "Individual disposable spoons" },
-        { name: "Ice Cream Spoons", price: "₹1-2/piece", description: "Small wooden spoons for desserts" }
-      ]
-    }
-  ];
-
+const PackagingSlider = () => {
+  const [selected, setSelected] = useState<any>(null);
   const features = [
-  { emoji: "🌱", title: "Eco-Friendly Options", text: "Biodegradable and environmentally sustainable packaging solutions" },
-  { emoji: "💰", title: "Bulk Pricing", text: "Competitive wholesale prices for large quantity orders" },
-  { emoji: "🎨", title: "Custom Branding", text: "Personalized packaging with your restaurant's logo and branding" },
-  { emoji: "🚚", title: "Fast Delivery", text: "Quick delivery across India with reliable logistics partners" },
-  { emoji: "🏆", title: "Quality Assured", text: "Food-grade certified materials meeting safety standards" },
-  { emoji: "📞", title: "24/7 Support", text: "Dedicated customer support for all your packaging needs" }
+    { emoji: "🌱", title: "Eco-Friendly Options", text: "Sustainable packaging solutions" },
+    { emoji: "💰", title: "Bulk Pricing", text: "Best rates for large orders" },
+    { emoji: "🎨", title: "Custom Branding", text: "Your brand, your identity" },
+    { emoji: "🚚", title: "Fast Delivery", text: "Quick delivery across India" },
+    { emoji: "🏆", title: "Quality Assured", text: "Food-grade certified materials" },
+    { emoji: "📞", title: "24/7 Support", text: "Always here to help you" }
+  ];
+  const clients = [
+  "clovia",
+  "kalighata",
+  "roongta",
+  "pindballuchi",
+  "mod",
+  "cinepolis",
+  "pvr",
+  "thenewshop",
+  "houseofcandy",
+  "madoverrolls",
+  "walkinwoods",
+  "vandanam",
+  "bakington",
+  "prodo",
+  "om"
+  
 ];
 
-  const packages = [
+  const slides = [
     {
-      name: "Starter Package",
-      price: "₹2,999",
-      description: "Perfect for small cafes and food stalls",
+      title: "Pouches",
       items: [
-        "100 Food containers",
-        "200 Paper cups",
-        "150 Plates",
-        "5 Tissue rolls",
-        "Basic cutlery set"
-      ],
-      suitable: "20-50 orders/day"
+        {
+          name: "Stand-Up Pouches",
+          desc: "Custom printed, resealable, ideal for branding",
+          details: "Best suited for displaying brand. High-quality printing & customization."
+        },
+        {
+          name: "Transparent Pouches",
+          desc: "See-through packaging",
+          details: "One side transparent, resealable, keeps food fresh longer."
+        },
+        {
+          name: "Kraft Pouches",
+          desc: "Eco-friendly storage",
+          details: "Used for dry fruits, tea, coffee, spices."
+        },
+        {
+          name: "Snack Pouches",
+          desc: "Food packaging",
+          details: "Perfect for snacks & takeaway."
+        },
+        {
+          name: "3-Side Seal Pouches",
+          desc: "Heat sealable",
+          details: "Barrier against light, air, dust. Used for liquids & powders."
+        }
+      ]
     },
     {
-      name: "Business Package",
-      price: "₹7,999",
-      description: "Ideal for medium restaurants",
+      title: "Wrapping",
       items: [
-        "300 Food containers",
-        "500 Cups & glasses",
-        "400 Plates & bowls",
-        "15 Tissue rolls",
-        "Wrapping materials",
-        "Complete cutlery sets"
-      ],
-      suitable: "100-200 orders/day",
-      popular: true
+        {
+          name: "Butter Paper",
+          desc: "Wrapping burgers & sandwiches",
+          details: "Available in sheet & roll. GSM 30–80. Oil & water resistant."
+        },
+        {
+          name: "Printed Butter Paper",
+          desc: "Custom branding wrap",
+          details: "Used for food & garment packaging."
+        },
+        {
+          name: "2-in-1 Food Wrap",
+          desc: "Foil + butter paper",
+          details: "Prevents soggy food, locks heat, ideal for takeaway."
+        },
+        {
+          name: "Aluminum Foil",
+          desc: "Heat retention",
+          details: "Keeps food warm."
+        },
+        {
+          name: "Food Wrap Film",
+          desc: "Cling film",
+          details: "Used for food preservation."
+        }
+      ]
     },
     {
-      name: "Enterprise Package",
-      price: "₹15,999",
-      description: "For large restaurants and chains",
+      title: "Containers",
       items: [
-        "1000+ Food containers",
-        "1500+ Cups & glasses",
-        "1200+ Plates & bowls",
-        "50+ Tissue rolls",
-        "Bulk wrapping materials",
-        "Custom branded packaging",
-        "Monthly delivery schedule"
-      ],
-      suitable: "500+ orders/day"
+        {
+          name: "Paper Containers",
+          desc: "Food-grade containers",
+          details: "Sizes from 40ml onwards. Used for takeaway."
+        },
+        {
+          name: "PVC Cylinders",
+          desc: "Transparent packaging",
+          details: "150ml–4500ml capacity. 100% recyclable."
+        },
+        {
+          name: "Seal-Peel Films",
+          desc: "Hot food packaging",
+          details: "Used for gravies & MAP packaging."
+        },
+        {
+          name: "Paper Seal Films",
+          desc: "Eco variant",
+          details: "80 GSM paper + ply."
+        },
+        {
+          name: "Thermoformed Containers",
+          desc: "Plastic containers",
+          details: "Printed & unprinted options."
+        }
+      ]
+    },
+    {
+      title: "Carry & Bags",
+      items: [
+        {
+          name: "Carry Bags",
+          desc: "Paper bags",
+          details: "High holding capacity, customizable branding."
+        },
+        {
+          name: "Grocery Bags",
+          desc: "Daily use bags",
+          details: "Strong and durable."
+        },
+        {
+          name: "Roti Envelope",
+          desc: "Food wraps",
+          details: "Used for rolls & takeaway."
+        },
+        {
+          name: "Paper Boat Tray",
+          desc: "Serving tray",
+          details: "Ideal for snacks & fries."
+        },
+        {
+          name: "Corrugated Boxes",
+          desc: "Packaging boxes",
+          details: "Used for deliveries."
+        }
+      ]
+    },
+    {
+      title: "Accessories",
+      items: [
+        {
+          name: "Paper Cups",
+          desc: "Hot & cold drinks",
+          details: "Available in various sizes."
+        },
+        {
+          name: "Paper Straws",
+          desc: "Eco-friendly straws",
+          details: "Multiple designs available."
+        },
+        {
+          name: "Wooden Cutlery",
+          desc: "Spoon & fork",
+          details: "Eco-friendly and disposable."
+        },
+        {
+          name: "Tissue Paper",
+          desc: "Soft & absorbent",
+          details: "Single & double ply options."
+        },
+        {
+          name: "Customized Tapes",
+          desc: "Branding tapes",
+          details: "Custom logo printing available."
+        }
+      ]
     }
   ];
-
-  const customization = [
-    { type: "Logo Printing", description: "Your restaurant logo on containers and cups", cost: "+15%" },
-    { type: "Color Customization", description: "Custom colors matching your brand", cost: "+10%" },
-    { type: "Special Designs", description: "Unique designs for special occasions", cost: "+20%" },
-    { type: "QR Code Integration", description: "QR codes for digital menus or feedback", cost: "+5%" }
-  ];
-  const radius = 320;
-
+  const ClientCard = ({ name, delay }: { name: string; delay: number }) => {
+  return (
+    <div
+      className="group bg-white rounded-xl shadow-md p-6 flex items-center justify-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+      style={{ animationDelay: `${delay}s` }}
+    >
+      <img
+        src={`/images/${name}.png`}
+        alt={name}
+        className="h-12 object-contain transition duration-300 group-hover:scale-110"
+      />
+    </div>
+  );
+};
   return (
     <Layout>
+
+      {/* HERO (UNCHANGED) */}
       <VideoHero
         title="Restaurant Packaging Solutions"
         subtitle="Complete range of eco-friendly packaging supplies for your restaurant"
@@ -153,104 +223,154 @@ const Packaging = () => {
         </div>
       </VideoHero>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gradient-to-b from-orange-50 to-white flex justify-center">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up">
-              <span className="gradient-text">Why Choose Our Packaging?</span>
+      {/* 🔥 PREMIUM FEATURES */}
+      <section className="py-24 bg-gradient-to-b from-orange-50 via-white to-white">
+        <div className="container mx-auto px-6">
+
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                Why Choose Our Packaging?
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              High-quality, affordable packaging solutions designed specifically for food businesses
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              Built for modern restaurants that care about quality & branding
             </p>
           </div>
-         <div className="relative w-[1000px] h-[1000px] justify-center items-center mx-auto">
-        
-        {/* Connecting lines */}
-        {features.map((_, i) => {
-          const angle = (i / features.length) * 2 * Math.PI;
-          const x = 500 + radius * Math.cos(angle);
-          const y = 500 + radius * Math.sin(angle);
-          return (
-            <svg key={i} className="absolute top-0 left-0 w-full h-full pointer-events-none">
-              <line
-                x1="500"
-                y1="500"
-                x2={x}
-                y2={y}
-                stroke="#f97316"
-                strokeWidth="2"
-                strokeDasharray="6,6"
-              />
-            </svg>
-          );
-        })}
 
-        {/* Center circle */}
-        <div className="absolute top-1/2 left-1/2 w-56 h-56 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-2xl text-center shadow-lg transform -translate-x-1/2 -translate-y-1/2">
-          MYFOJO <br /> Packaging
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+            {features.map((f, i) => (
+              <div key={i} className="group p-[1px] rounded-2xl bg-gradient-to-br from-orange-400 to-red-500">
+                <div className="bg-white rounded-2xl p-8 text-center transition group-hover:shadow-2xl group-hover:-translate-y-2">
+                  <div className="text-5xl mb-4 group-hover:scale-110 transition">
+                    {f.emoji}
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
+                  <p className="text-sm text-gray-500">{f.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
+      </section>
 
-        {/* Feature boxes */}
-        {features.map((f, i) => {
-          const angle = (i / features.length) * 2 * Math.PI;
-          const x = radius * Math.cos(angle);
-          const y = radius * Math.sin(angle);
+      {/* 🔥 PREMIUM CATALOGUE */}
+      <section className="py-20 bg-gradient-to-b from-orange-50 to-white">
+      <div className="max-w-7xl mx-auto px-6">
 
-          return (
-            <div
-              key={i}
-              className="absolute w-52 h-52 bg-white rounded-xl shadow-lg flex flex-col items-center justify-center text-center p-6"
-              style={{
-                left: "50%",
-                top: "50%",
-                transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
-              }}
-            >
-              <div className="text-7xl mb-3">{f.emoji}</div>
-              <h3 className="font-bold text-lg">{f.title}</h3>
-              <p className="text-sm text-gray-600">{f.text}</p>
-            </div>
-          );
-        })}
-      </div>
-      </div>
-    </section>
+        <h2 className="text-4xl font-bold mb-12 text-center">
+          <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+            Packaging Catalogue
+          </span>
+        </h2>
 
-      {/* Product Categories Section */}
-    <section className="pb-20 bg-gradient-subtle">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Our Product Range</span>
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Everything you need for food packaging and presentation
-          </p>
-        </div>
+        {/* SLIDER */}
+        <div className="flex gap-8 overflow-x-auto pb-6">
 
-        {/* You may want to render your products here instead of features */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {products.map((product, idx) => (
-            <div key={product.category} className="service-card p-8 text-center animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
-              <div className="text-5xl mb-3">{product.emoji}</div>
-              <h3 className="font-bold text-xl mb-2">{product.category}</h3>
-              <ul className="text-left mb-4 space-y-2">
-                {product.items.map((item, i) => (
-                  <li key={i} className="flex flex-col">
-                    <span className="font-semibold">{item.name} <span className="text-primary">{item.price}</span></span>
-                    <span className="text-muted-foreground text-sm">{item.description}</span>
-                  </li>
+          {slides.map((slide, i) => (
+            <div key={i} className="min-w-[350px]">
+              
+              <h3 className="text-xl font-bold mb-4 text-orange-600">
+                {slide.title}
+              </h3>
+
+              <div className="space-y-4">
+                {slide.items.map((item, j) => (
+                  <div
+                    key={j}
+                    className="bg-white p-5 rounded-xl shadow-md hover:shadow-xl transition"
+                  >
+                    <h4 className="font-semibold">{item.name}</h4>
+                    <p className="text-sm text-gray-500 mb-3">
+                      {item.desc}
+                    </p>
+
+                    <button
+                      onClick={() => setSelected(item)}
+                      className="text-sm text-white bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-lg"
+                    >
+                      View Details
+                    </button>
+                  </div>
                 ))}
-              </ul>
+              </div>
+
             </div>
           ))}
         </div>
+
+        {/* MODAL */}
+        {selected && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-white p-8 rounded-2xl max-w-lg w-full relative">
+
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-4 right-4 text-gray-500"
+              >
+                ✕
+              </button>
+
+              <h3 className="text-2xl font-bold mb-4">
+                {selected.name}
+              </h3>
+
+              <p className="text-gray-600 mb-4">
+                {selected.details}
+              </p>
+
+              <a
+                href={`https://wa.me/919990964509?text=I want details about ${selected.name}`}
+                target="_blank"
+              >
+                <button className="bg-orange-500 text-white px-6 py-3 rounded-lg">
+                  Enquire on WhatsApp
+                </button>
+              </a>
+
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
+    {/* OUR CLIENTS*/}
+     <section className="py-28 bg-gradient-to-b from-orange-50 to-white">
+  <div className="max-w-7xl mx-auto px-6 text-center">
 
+    {/* TITLE */}
+    <h2 className="text-5xl font-bold mb-6">
+      <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+        Our Clients
+      </span>
+    </h2>
 
-      {/* CTA Section */}
+    <p className="text-gray-500 mb-16">
+      Trusted by leading brands across India
+    </p>
+
+    {/* GRID */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10">
+
+      {clients.map((name, i) => (
+        <div
+          key={i}
+          className="group bg-white rounded-2xl shadow-md p-6 flex items-center justify-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105"
+        >
+          <img
+            src={`/images/${name}.png`}
+            alt={name}
+            className="h-14 object-contain transition duration-300 group-hover:scale-110"
+          />
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
+      {/* CTA (UNCHANGED) */}
       <section className="py-20 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
@@ -262,19 +382,12 @@ const Packaging = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
-                <Button 
-                  size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg rounded-full"
-                >
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg rounded-full">
                   Get Bulk Quote
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg rounded-full bg-transparent"
-                >
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg rounded-full bg-transparent">
                   Request Samples
                 </Button>
               </Link>
@@ -282,8 +395,9 @@ const Packaging = () => {
           </div>
         </div>
       </section>
+
     </Layout>
   );
 };
 
-export default Packaging;
+export default PackagingSlider;
